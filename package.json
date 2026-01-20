@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@niledatabase/react": "^5.3.1",
+    "@niledatabase/server": "^5.3.1",
     "@radix-ui/react-slot": "^1.2.4",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
@@ -23,7 +25,8 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0",
-    "three": "^0.182.0"
+    "three": "^0.182.0",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
