@@ -26,7 +26,7 @@ export default function WebServicePage() {
                         {
                             id: "001",
                             title: "FRAMEWORK",
-                            val: "Next.js 15",
+                            val: "Next.js",
                             type: "text",
                         },
                         {
@@ -49,12 +49,12 @@ export default function WebServicePage() {
                     description="Scalable, secure, and lightning-fast web applications."
                     technologies={[
                         {
-                            name: "Next.js 15",
+                            name: "Next.js",
                             category: "Meta-Framework",
                             description: "The React framework for the web. Server Components, Edge Runtime, and unparalleled performance."
                         },
                         {
-                            name: "React 19",
+                            name: "React",
                             category: "UI Library",
                             description: "Building interactive user interfaces with the latest features like Actions and optimistic updates."
                         },
@@ -74,7 +74,7 @@ export default function WebServicePage() {
                             description: "Bringing the web to life with immersive 3D experiences and WebGL."
                         },
                         {
-                            name: "Supabase",
+                            name: "Supabase / Convex",
                             category: "Database",
                             description: "The open source Firebase alternative. Postgres database, Authentication, instant APIs."
                         }

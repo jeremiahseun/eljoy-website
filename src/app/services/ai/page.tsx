@@ -26,7 +26,7 @@ export default function AIServicePage() {
                         {
                             id: "001",
                             title: "MODELS",
-                            val: "GPT-4 / Claude",
+                            val: "GPT / Claude",
                             type: "text",
                         },
                         {
@@ -49,12 +49,12 @@ export default function AIServicePage() {
                     description="Leveraging the power of LLMs and autonomous agents to transform your business."
                     technologies={[
                         {
-                            name: "OpenAI GPT-4",
+                            name: "Gemini",
                             category: "LLM",
                             description: "The industry standard for natural language understanding and generation."
                         },
                         {
-                            name: "Claude 3.5 Sonnet",
+                            name: "Claude",
                             category: "LLM",
                             description: "Anthropic's latest model, excelling in reasoning and coding tasks."
                         },
