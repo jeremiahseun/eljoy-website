@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { FloatingCTA } from "@/components/ui/floating-cta";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,8 +35,13 @@ export const metadata: Metadata = {
         "React Native"
     ],
     authors: [{ name: "EL-Joy Team", url: "https://eljoy.tech" }],
-    creator: "EL-Joy",
+    creator: "EL-Joy Team",
     publisher: "EL-Joy",
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
     robots: {
         index: true,
         follow: true,
@@ -57,7 +63,7 @@ export const metadata: Metadata = {
         siteName: "EL-Joy",
         images: [
             {
-                url: "/og-image.png", // We might need to ensure this exists or create it
+                url: "/images/logo/el-joy-full.png",
                 width: 1200,
                 height: 630,
                 alt: "EL-Joy Software Studio",
@@ -69,14 +75,15 @@ export const metadata: Metadata = {
         title: "EL-Joy | Enterprise-Grade Software Studio",
         description:
             "We build world-class mobile, web, and AI solutions that transform businesses. From concept to deployment, we're your technology partner.",
-        images: ["/og-image.png"],
-        creator: "@eljoy_tech", // Assuming this handle or updating later
+        images: ["/images/logo/el-joy-full.png"],
+        creator: "@eljoy_tech",
     },
     icons: {
-        icon: "/favicon.ico",
-        shortcut: "/favicon.ico",
-        apple: "/apple-touch-icon.png", // Assuming these exist or will be default
+        icon: "/images/logo/el-joy-full.png",
+        shortcut: "/images/logo/el-joy-full.png",
+        apple: "/images/logo/el-joy-full.png",
     },
+    manifest: "/manifest.json",
     alternates: {
         canonical: "https://eljoy.tech",
     },
@@ -94,6 +101,7 @@ export default function RootLayout({
             >
                 {children}
                 <Analytics />
+                <FloatingCTA />
             </body>
         </html>
     );

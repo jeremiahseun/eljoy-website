@@ -6,6 +6,7 @@ import { Float, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const LiquidBackground = () => {
     const meshRef = useRef<THREE.Mesh>(null);
@@ -85,6 +86,7 @@ interface ExperienceHeroProps {
     title: React.ReactNode;
     subtitle: string;
     ctaText?: string;
+    ctaHref?: string;
     stats?: StatItem[];
 }
 
@@ -92,6 +94,7 @@ export const ExperienceHero = ({
     title,
     subtitle,
     ctaText = "Start a Project",
+    ctaHref = "/contact",
     stats = [
         { id: "001", title: "AVAILABILITY", val: "Open", type: "progress" },
         { id: "002", title: "STUDIO STATS", val: "20+ Wins", type: "data" },
@@ -101,6 +104,7 @@ export const ExperienceHero = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const revealRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLButtonElement>(null);
+    const router = useRouter();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -194,6 +198,7 @@ export const ExperienceHero = ({
 
                     <button
                         ref={ctaRef}
+                        onClick={() => router.push(ctaHref)} // Use router.push for navigation
                         className="w-fit flex items-center gap-6 group lg:-translate-y-20 cursor-pointer"
                     >
                         <div className="w-14 h-14 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500 overflow-hidden">

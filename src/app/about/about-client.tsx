@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/ui/footer-section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target, Heart, Zap, Users, Globe, Award } from "lucide-react";
+import { ArrowRight, Target, Heart, Zap, Users, Globe, Award, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { GlowingCard } from "@/components/ui/glowing-card"; // Import
 
@@ -99,8 +99,7 @@ export default function AboutClient() {
                                     </p>
                                     <p>
                                         Today, we partner with startups and enterprises across 15+ countries,
-                                        bringing the same level of excellence to every project—whether it&apos;s a
-                                        weekend MVP or a complex enterprise platform.
+                                        bringing the same level of excellence to every project—from high-performance **Mobile SDKs** to complex enterprise platforms.
                                     </p>
                                     <p className="text-white font-medium">
                                         We don&apos;t just build software. We build the tools that help you win.
@@ -114,8 +113,13 @@ export default function AboutClient() {
                                 viewport={{ once: true }}
                                 className="relative"
                             >
-                                <div className="aspect-square rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/10 p-8 flex items-center justify-center">
-                                    <Globe className="w-32 h-32 text-purple-400/50" />
+                                <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 relative group">
+                                    <img
+                                        src="/images/about/our-story.png"
+                                        alt="Our Story"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 mix-blend-overlay" />
                                 </div>
                                 {/* Floating stats */}
                                 <div className="absolute -top-4 -right-4 bg-black/80 backdrop-blur-sm border border-white/10 rounded-xl p-4">
@@ -191,39 +195,34 @@ export default function AboutClient() {
                     </div>
                 </section>
 
-                {/* Expertise Section */}
+                {/* Founder Section */}
                 <section className="py-20 px-4">
                     <div className="container mx-auto max-w-6xl">
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid lg:grid-cols-5 gap-12 items-center">
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
+                                className="lg:col-span-2 relative"
                             >
-                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                    Decades of Combined Experience
-                                </h2>
-                                <p className="text-gray-400 mb-8">
-                                    Our team brings deep expertise across the full technology stack.
-                                    We&apos;ve seen it all—and we know what works.
-                                </p>
-                                <div className="space-y-4">
-                                    {expertise.map((item, index) => (
-                                        <motion.div
-                                            key={item.area}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: index * 0.1 }}
-                                        >
-                                            <GlowingCard className="rounded-xl p-1 md:p-1 md:rounded-xl">
-                                                <div className="flex items-center justify-between">
-                                                    <span className="text-white font-medium">{item.area}</span>
-                                                    <span className="text-purple-400 font-bold">{item.years} years</span>
-                                                </div>
-                                            </GlowingCard>
-                                        </motion.div>
-                                    ))}
+                                <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-purple-900/40 to-black relative group">
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(168,85,247,0.2),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                    <img
+                                        src="/images/team/founder.jpg"
+                                        alt="Jeremiah Israel (Erinola)"
+                                        className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                                    <div className="absolute bottom-6 left-6 right-6">
+                                        <div className="flex gap-3 mb-4">
+                                            <a href="https://www.linkedin.com/in/jeremiah-seun-eljoy/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-colors border border-white/10">
+                                                <Linkedin className="w-5 h-5" />
+                                            </a>
+                                            <a href="https://www.github.com/jeremiahseun" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-colors border border-white/10">
+                                                <Github className="w-5 h-5" />
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.div>
 
@@ -231,10 +230,31 @@ export default function AboutClient() {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="relative"
+                                className="lg:col-span-3"
                             >
-                                <div className="aspect-square rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/10 p-8 flex items-center justify-center">
-                                    <Award className="w-32 h-32 text-purple-400/50" />
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                                    Jeremiah Israel (Erinola)
+                                </h2>
+                                <p className="text-purple-400 font-medium mb-6 flex items-center gap-2">
+                                    Lead Architect/CTO
+                                </p>
+
+                                <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+                                    <p>
+                                        I started EL-Joy because I saw a massive gap between what businesses needed and what standard agencies delivered. Too many companies were paying enterprise prices for startup quality, or dealing with freelancers who disappeared halfway through a project.
+                                    </p>
+                                    <p>
+                                        As a full-stack engineer, I've spent years architecting systems that handle real-world scale—from FinTech SDKs that process thousands of transactions to AI products that need to respond in milliseconds.
+                                    </p>
+                                    <p>
+                                        When you work with EL-Joy, you're not getting a junior team learning on your dime. You're getting direct access to engineering leadership that treats your product's success as the only metric that matters.
+                                    </p>
+                                </div>
+
+                                <div className="mt-8 flex flex-wrap gap-3">
+                                    <span className="px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium">Software Architecture</span>
+                                    <span className="px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium">Mobile SDKs</span>
+                                    <span className="px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-sm font-medium">AI Integration</span>
                                 </div>
                             </motion.div>
                         </div>

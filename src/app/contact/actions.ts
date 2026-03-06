@@ -8,7 +8,7 @@ const contactSchema = z.object({
     name: z.string().min(2, "Name is required"),
     email: z.string().email("Invalid email address"),
     company: z.string().optional(),
-    projectType: z.string().min(1, "Project type is required"),
+    projectType: z.string().optional(),
     budget: z.string().optional(),
     message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -26,7 +26,7 @@ export async function submitContactForm(prevState: ContactFormState, formData: F
         name: formData.get("name"),
         email: formData.get("email"),
         company: formData.get("company"),
-        projectType: formData.get("projectType"),
+        projectType: formData.get("projectType") || "General Inquiry",
         budget: formData.get("budget"),
         message: formData.get("message"),
     };

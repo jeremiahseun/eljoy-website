@@ -13,9 +13,19 @@ interface Project {
     tags: string[];
     link?: string;
     image: string;
+    metrics?: string[];
 }
 
 const projects: Project[] = [
+    {
+        title: "Peerpay SDK",
+        category: "Fintech / SDK",
+        description:
+            "Enterprise-grade banking SDK powering commercial applications. Engineered for rapid integration and unparalleled reliability.",
+        tags: ["Flutter", "Dart", "Security"],
+        image: "/images/flashprofit_preview.png", // Reusing image placeholder
+        metrics: ["Reduced integration from 24 weeks to 7 days", "Powers 27+ commercial banking apps"],
+    },
     {
         title: "Deo",
         category: "AI / Mobile",
@@ -23,6 +33,7 @@ const projects: Project[] = [
             "AI-powered PWA providing daily outfit suggestions based on weather and personal wardrobe data. Integrated with Gemini 2.0 Flash for intelligent recommendations.",
         tags: ["Node.js", "Flutter", "Gemini AI"],
         image: "/images/deo_preview.png",
+        metrics: ["99.9% crash-free sessions", "35% reduced system downtime"],
     },
     {
         title: "FlashProfit",
@@ -47,6 +58,7 @@ const projects: Project[] = [
             "AI-powered logistics infrastructure for Nigeria's online business ecosystem. Unified platform for delivery management and intelligent order tracking.",
         tags: ["Flutter", "Google Maps", "Location Tracking"],
         image: "/images/vendoor_preview.png",
+        metrics: ["60% user adoption in 6 months", "50% improved request response rates"],
     },
     {
         title: "Stakesmart",
@@ -56,6 +68,7 @@ const projects: Project[] = [
         tags: ["Flutter", "Supabase", "PostgreSQL", "OneSignal"],
         link: "https://stakesmartai.com/",
         image: "/images/stakesmart_preview.png",
+        metrics: ["Up to 85% prediction accuracy"],
     },
 ];
 
@@ -132,6 +145,16 @@ function ProjectCard({ project, index, isLastOdd }: { project: Project; index: n
                                 </span>
                             ))}
                         </div>
+                        {project.metrics && project.metrics.length > 0 && (
+                            <div className="mt-4 flex flex-col gap-2">
+                                {project.metrics.map((metric, i) => (
+                                    <div key={i} className="flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 px-3 py-1.5 rounded-md w-fit">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                                        <span className="text-sm text-purple-200 font-medium">{metric}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

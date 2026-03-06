@@ -11,9 +11,9 @@ export default function manifest(): MetadataRoute.Manifest {
         theme_color: "#000000",
         icons: [
             {
-                src: "/favicon.ico",
+                src: "/images/logo/el-joy-full.png",
                 sizes: "any",
-                type: "image/x-icon",
+                type: "image/png",
             },
         ],
     };

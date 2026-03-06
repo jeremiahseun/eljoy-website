@@ -9,6 +9,7 @@ import { Footer } from "@/components/ui/footer-section";
 
 // Lazy load heavy sections for better initial performance
 const Portfolio = lazy(() => import("@/components/sections/portfolio").then(m => ({ default: m.Portfolio })));
+const Testimonials = lazy(() => import("@/components/sections/testimonials").then(m => ({ default: m.Testimonials })));
 const Features = lazy(() => import("@/components/sections/features").then(m => ({ default: m.Features })));
 const Process = lazy(() => import("@/components/sections/process").then(m => ({ default: m.Process })));
 const Contact = lazy(() => import("@/components/sections/contact").then(m => ({ default: m.Contact })));
@@ -32,12 +33,8 @@ export default function HomeClient() {
                 {/* Hero with Spiral Animation */}
                 <Hero
                     eyebrow="Software Studio"
-                    title="Enterprise-Grade Solutions. Startup Speed."
-                    subtitle="We build world-class mobile, web, and AI solutions that transform businesses. From concept to deployment, we're your technology partner."
-                    ctaLabel="Explore Our Work"
-                    ctaHref="#portfolio"
-                    secondaryCtaLabel="Schedule a Call"
-                    secondaryCtaHref="#contact"
+                    title="We Turn Your App Idea Into a Product Users Love"
+                    subtitle="Mobile apps, web platforms, and AI solutions — shipped fast, built to scale. From fintech SDKs powering 27+ banking apps to AI assistants used daily."
                 />
 
                 {/* Trusted By */}
@@ -52,14 +49,19 @@ export default function HomeClient() {
 
                 {/* Portfolio with Nebula Shader Background */}
                 <Suspense fallback={<SectionLoader />}>
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden w-full max-w-[100vw]">
                         <div className="absolute inset-0 z-0">
                             <InteractiveNebulaShader disableCenterDimming />
                         </div>
-                        <div className="relative z-10">
+                        <div className="relative z-10 w-full overflow-hidden">
                             <Portfolio />
                         </div>
                     </div>
+                </Suspense>
+
+                {/* Testimonials */}
+                <Suspense fallback={<SectionLoader />}>
+                    <Testimonials />
                 </Suspense>
 
                 {/* Features (Why EL-Joy) */}

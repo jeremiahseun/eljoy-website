@@ -1,0 +1,16 @@
+<svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- EL Lion Symbol -->
+  <g id="Symbol">
+    <!-- Mane and Neck (Forms the L) -->
+    <path d="M70 30 C 90 20, 110 40, 100 80 C 95 100, 110 120, 130 120 L 60 120 L 70 30 Z" fill="currentColor" />
+    <!-- Lion Face Profile (Forms the E) -->
+    <path d="M65 45 L 35 45 M 62 75 L 42 75 M 65 105 L 35 105" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+    <path d="M35 45 C 20 45, 15 60, 15 75 C 15 90, 20 105, 35 105" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+  <!-- Joy Text -->
+  <text x="150" y="105" font-family="Arial, sans-serif" font-weight="200" font-size="70" fill="currentColor" letter-spacing="-2">Joy</text>
+
+  <!-- Technologies Text -->
+  <text x="150" y="135" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="currentColor" letter-spacing="4" opacity="0.8">TECHNOLOGIES</text>
+</svg>

@@ -15,7 +15,7 @@ export default function Home() {
         "@type": "Organization",
         "name": "EL-Joy",
         "url": "https://eljoy.tech",
-        "logo": "https://eljoy.tech/icon.png",
+        "logo": "https://eljoy.tech/images/logo/el-joy-full.png",
         "sameAs": [
             "https://twitter.com/eljoy_tech",
             "https://linkedin.com/company/eljoy"

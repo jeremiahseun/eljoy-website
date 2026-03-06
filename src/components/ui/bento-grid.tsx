@@ -14,6 +14,7 @@ export interface BentoItem {
     cta?: string;
     colSpan?: number;
     hasPersistentHover?: boolean;
+    href?: string;
 }
 
 interface BentoGridProps {
@@ -41,8 +42,8 @@ function BentoGrid({ items }: BentoGridProps) {
                     {/* Background pattern */}
                     <div
                         className={`absolute inset-0 ${item.hasPersistentHover
-                                ? "opacity-100"
-                                : "opacity-0 group-hover:opacity-100"
+                            ? "opacity-100"
+                            : "opacity-0 group-hover:opacity-100"
                             } transition-opacity duration-300`}
                     >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.03)_1px,transparent_1px)] bg-[length:4px_4px]" />
@@ -115,8 +116,8 @@ function BentoGrid({ items }: BentoGridProps) {
                     {/* Gradient border effect */}
                     <div
                         className={`absolute inset-0 -z-10 rounded-2xl p-px bg-gradient-to-br from-purple-500/20 via-transparent to-pink-500/20 ${item.hasPersistentHover
-                                ? "opacity-100"
-                                : "opacity-0 group-hover:opacity-100"
+                            ? "opacity-100"
+                            : "opacity-0 group-hover:opacity-100"
                             } transition-opacity duration-300`}
                     />
                 </div>

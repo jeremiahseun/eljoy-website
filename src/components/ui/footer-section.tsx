@@ -45,10 +45,10 @@ const footerLinks: FooterSection[] = [
     {
         label: 'Connect',
         links: [
-            { title: 'LinkedIn', href: '#', icon: Linkedin, external: true },
-            { title: 'Twitter', href: '#', icon: Twitter, external: true },
-            { title: 'GitHub', href: '#', icon: Github, external: true },
+            { title: 'LinkedIn', href: 'https://www.linkedin.com/in/jeremiah-seun-eljoy/', icon: Linkedin, external: true },
+            { title: 'GitHub', href: 'https://www.github.com/jeremiahseun', icon: Github, external: true },
             { title: 'Email', href: 'mailto:hello@eljoy.tech', icon: Mail },
+            { title: 'WhatsApp', href: 'https://wa.me/2348163791889?text=Hi%20EL-Joy%2C%20I%27m%20interested%20in%20building%20a%20project.%20Can%20we%20talk%3F', external: true }
         ],
     },
 ];

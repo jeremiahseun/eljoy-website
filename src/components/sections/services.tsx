@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { BentoGrid, type BentoItem } from "@/components/ui/bento-grid";
-import { Smartphone, Globe, Sparkles } from "lucide-react";
+import { Smartphone, Globe, Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const services: BentoItem[] = [
     {
@@ -15,6 +16,7 @@ const services: BentoItem[] = [
         tags: ["iOS", "Android", "Flutter"],
         colSpan: 1,
         hasPersistentHover: true,
+        href: "/services/mobile",
     },
     {
         title: "Web Development",
@@ -24,6 +26,7 @@ const services: BentoItem[] = [
         image: "/images/services/web.png",
         tags: ["React", "Next.js", "Node.js", "AWS", "GCP", "Docker"],
         colSpan: 1,
+        href: "/services/web",
     },
     {
         title: "AI & Automation",
@@ -34,6 +37,7 @@ const services: BentoItem[] = [
         status: "Trending",
         tags: ["Gemini", "RAG", "Automation"],
         colSpan: 1,
+        href: "/services/ai",
     },
 ];
 
@@ -80,8 +84,8 @@ export function Services() {
 }
 
 function ServiceCard({ item, fillHeight = false }: { item: BentoItem; fillHeight?: boolean }) {
-    return (
-        <div className={`group relative rounded-2xl border border-white/10 p-1 bg-black/50 backdrop-blur-sm ${fillHeight ? "h-full" : ""}`}>
+    const CardContent = (
+        <div className={`group relative rounded-2xl border border-white/10 p-1 bg-black/50 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] ${fillHeight ? "h-full" : ""}`}>
             <div className={`relative flex flex-col rounded-xl overflow-hidden bg-gradient-to-br from-black via-black/95 to-purple-950/10 border border-white/5 ${fillHeight ? "h-full" : ""}`}>
                 {/* Image */}
                 {item.image && (
@@ -108,7 +112,7 @@ function ServiceCard({ item, fillHeight = false }: { item: BentoItem; fillHeight
                                 {item.icon}
                             </div>
                         )}
-                        <h3 className="font-semibold text-white text-lg">{item.title}</h3>
+                        <h3 className="font-semibold text-white text-lg group-hover:text-purple-300 transition-colors">{item.title}</h3>
                     </div>
                     <p className={`text-sm text-gray-400 leading-relaxed ${fillHeight ? "flex-1" : ""}`}>
                         {item.description}
@@ -123,8 +127,23 @@ function ServiceCard({ item, fillHeight = false }: { item: BentoItem; fillHeight
                             </span>
                         ))}
                     </div>
+
+                    {/* Learn More CTA */}
+                    <div className="mt-4 flex items-center text-sm font-medium text-purple-400 opacity-80 group-hover:opacity-100 transition-opacity">
+                        Learn More <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </div>
                 </div>
             </div>
         </div>
     );
+
+    if (item.href) {
+        return (
+            <Link href={item.href} className={`block ${fillHeight ? "h-full" : ""}`}>
+                {CardContent}
+            </Link>
+        );
+    }
+
+    return CardContent;
 }

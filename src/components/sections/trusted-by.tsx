@@ -4,9 +4,11 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 const clients = [
+    { name: "Kuda", logo: null, text: "KUDA." },
     { name: "Vendoor", logo: "/images/clients/vendoor.png" },
     { name: "Stakesmart", logo: "/images/clients/stakesmart.png" },
     { name: "Intimately", logo: "/images/clients/intimately.svg" },
+    { name: "Sendy", logo: null, text: "Sendy" },
 ];
 
 export function TrustedBy() {
@@ -30,15 +32,21 @@ export function TrustedBy() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                            className="grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex items-center justify-center h-10"
                         >
-                            <Image
-                                src={client.logo}
-                                alt={client.name}
-                                width={120}
-                                height={40}
-                                className="h-8 md:h-10 w-auto object-contain"
-                            />
+                            {client.logo ? (
+                                <Image
+                                    src={client.logo}
+                                    alt={client.name}
+                                    width={120}
+                                    height={40}
+                                    className="h-8 md:h-10 w-auto object-contain"
+                                />
+                            ) : (
+                                <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+                                    {client.text}
+                                </span>
+                            )}
                         </motion.div>
                     ))}
                 </div>
